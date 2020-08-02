@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head style="text-align: center;">
+
+    <script type="text/javascript">
+        function validate() {
+            if (document.myform.fname.value == "") {
+                alert("Please provide your name!");
+                document.myform.fname.focus();
+                return false;
+            }
+
+            if (document.myform.lname.value == "") {
+                alert("Please provide your last name!");
+                document.myform.lname.focus();
+                return false;
+            }
+
+            var m = document.getElementById('male').checked;
+            var f = document.getElementById('female').checked;
+            var f = document.getElementById('other').checked;
+
+            if (m == false && f == false) {
+                alert("Please select Gender!");
+
+                return false;
+            }
+
+            if (document.myform.email.value == "") {
+                alert("Please provide your email!");
+                document.myform.email.focus();
+                return false;
+            }
+
+            if (document.myform.uid.value == "") {
+                alert("Please provide your user id!");
+                document.myform.uid.focus();
+                return false;
+            }
+
+            if (document.myform.pass.value == "") {
+                alert("Please provide your password!");
+                document.myform.pass.focus();
+                return false;
+            }
+
+            if (document.myform.qual.value == "-1") {
+                alert("Please select Qualification!");
+                document.myform.qual.focus();
+                return false;
+            }
+
+            var a = document.getElementById('Algo').checked;
+            var b = document.getElementById('cn').checked;
+            var c = document.getElementById('Mul').checked;
+            var d = document.getElementById('TCS').checked;
+
+            if (a == false && b == false && c == false && d == false) {
+                alert("Please select Subjects!");
+
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+
+<body style="background-color: beige;" style="text-align: center;">
+    <style>
+        body {
+            background-image: url('comp.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+            color: whitesmoke;
+            text-align: center;
+        }
+    </style>
+    <p style="text-align: center;"><img src="terna.jpg.png" width="150" height="150" hspace="400"></p>
+    <h2 align=center style="color: whitesmoke;">Registration Form</h2>
+    <form NAME="myform" action=welcome.html method=get onsubmit="return(validate());">
+        <h3>
+            <label for="fname">First Name: </label>
+            <input type="text" id="fname" name="fname"><br><br>
+
+            <label for="lname">Last Name:  </label>
+            <input type="text" id="lname" name="lname"><br><br>
+
+            <label for="dob">   DOB: </label>
+            <input type="date" id="date" name="date"><br><br>
+
+            <p>Gender:</p>
+            <h4>
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Female</label>
+                <input type="radio" id="other" name="gender" value="other">
+                <label for="female">Other</label></h4><br>
+
+            <h3><label for="email">Email:</label>
+                <input type="email" id="email" name="email"><br><br>
+
+                <label for="uid">User Id:  </label>
+                <input type="text" id="uid" name="uid"><br><br>
+
+                <label for="pass">Password:  </label>
+                <input type="password" id="pass" name="pass"><br><br>
+
+                <label for="pass">Confirm Password:  </label>
+                <input type="password" id="pass" name="pass"><br><br>
+
+
+                <label for="qual">Qualification :  </label>
+                <h4><select id="qual" name="qual">
+   <option value="-1" selected>[select]</option>
+   <option value="B.Tech">H.S.C.</option>
+   <option value="B.E.">B.E.</option>
+   <option value="BSC">BSC</option>
+   <option value="Diploma">Diploma</option>
+</select><br><br>
+
+                    <h3><label for="sub">Skills: </label><br>
+                        <h4><input type="checkbox" id="Algo" name="Algo">
+                            <label for="Algo">C</label><br>
+                            <input type="checkbox" id="cn" name="cn">
+                            <label for="cn">Python</label><br>
+                            <input type="checkbox" id="Mul" name="Mul">
+                            <label for="Mul">H.T.M.L.</label><br>
+                            <input type="checkbox" id="TCS" name="TcS">
+                            <label for="TcS">JAVA</label><br><br>
+
+
+                            <input type="submit" value="submit">
+    </form>
+</body>
+
+</html>
